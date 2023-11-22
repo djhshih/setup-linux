@@ -18,7 +18,7 @@ Here are the steps of setting up Fedora on VirtualBox:
 ## SSH key and GitHub/Bitbucket/GitLab
 Applies to both local machine and remote server
 
-
+### Generate SSH keys
 reference: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 We will generate the ssh key through the terminal, at the end, you will have two ssh keys: private ssh key and public ssh key.
@@ -56,6 +56,9 @@ some string + your enter email
 The key's randomart image is:
 some image
 ```
+
+### Adding SSH keys to GitHub/Bitbucket/GitLab
+TODO:
 
 ## Git
 TODO: Bingqing
