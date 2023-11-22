@@ -128,11 +128,34 @@ Here are some useful tmux commands:
 When you disconnect from the server and have to reinitialize tmux, use `tmux attach` to attach the previous tmux session.
 
 ## Remote server login
-TODO: Noel
+### Change password
+To change your password...
+
+1. Run `passwd` in the terminal, which will show some password chaning messages as well as a password prompt, like the following:
+
+```
+Changing password for user X.
+Changing password for X.
+(current) UNIX password: 
+```
+
+2. Enter you current password and click enter, which will give another password prompt, like the following:
+
+```
+New password:
+```
+
+3. Enter your desired new password and click enter. Note that your password should be longer than 10 characters, otherwise you will receiver a message `The password is shorter than 10 characters`
+
+4. Retype your desired new password and click enter
+
+5. You should receive the message `passwd: all authentication tokens updated successfully.`
+
+6. Done
 
 ```
 passwd
-ssh-copy-id
+ssh-copy-id # TODO
 ```
 
 ## Conda environment
