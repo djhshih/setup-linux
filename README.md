@@ -129,9 +129,8 @@ When you disconnect from the server and have to reinitialize tmux, use `tmux att
 
 ## Remote server login
 ### Change password
-To change your password...
 
-1. Run `passwd` in the terminal, which will show some password chaning messages as well as a password prompt, like the following:
+1. Run `passwd` in the terminal, which will give a password prompt, like the following:
 
 ```
 Changing password for user X.
@@ -145,7 +144,10 @@ Changing password for X.
 New password:
 ```
 
-3. Enter your desired new password and click enter. Note that your password should be longer than 10 characters, otherwise you will receiver a message `The password is shorter than 10 characters`
+3. Enter your desired new password and click enter, you will receive another prompt on retyping the new password.  Note that your password should be longer than 10 characters, otherwise you will receiver a message `The password is shorter than 10 characters`
+```
+Retype new password:
+```
 
 4. Retype your desired new password and click enter
 
