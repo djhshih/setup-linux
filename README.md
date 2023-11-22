@@ -35,6 +35,22 @@ Applies to both local machine and remote server
 ## Tmux
 TODO: Jonathan
 
+Tmux is useful for organizing multiple tasks and directories in a server. Tmux keeps processes running even when you disconnect from the server, retaining your progress which is useful for many tasks.  
+
+Initiate tmux with `tmux`, assuming your `~/.bashrc` file has set an alias to tmux that points it to a tmux executable. The default keys for PREFIX are Ctrl + B. Using the above tmux config, the PREFIX is `.  
+
+Here are some useful tmux commands:  
+* PREFIX + C : Create new window
+* PREFIX + X : Delete current pane
+* PREFIX + , : Rename current window
+* PREFIX + % : Split pane vertically
+* PREFIX + " : Split pane horizontally
+* PREFIX + ARROWKEYS : Move between split panes based on arrow keys
+* PREFIX + P : Move to previous window
+* PREFIX + N : Move to next window
+
+When you disconnect from the server and have to reinitialize tmux, use `tmux attach` to attach the previous tmux session.
+
 ## Remote server login
 TODO: Noel
 
