@@ -23,8 +23,10 @@ reference: https://docs.github.com/en/authentication/connecting-to-github-with-s
 
 We will generate the ssh key through the terminal, at the end, you will have two ssh keys: private ssh key and public ssh key.
 
+Below are the steps to generate SSH keys:
+
 1. open terminal
-2. run `ssh-keygen -t ed25519 -C "your_email@example.com"
+2. run `ssh-keygen -t ed25519 -C "your_email@example.com"`
 
 There will be a prompt on where to save the files, like the following:
 ```
@@ -32,8 +34,7 @@ Generating public/private ed25519 key pair.
 Enter file in which to save the key (some_path/.ssh/id_ed25519):
 ```
 
-Simply press Enter to store the files in the default file location.
-
+3. Simply press Enter to store the files in the default file location.
 
 Then you will see a message indicate that you have successfully created a new directory for the ssh files, as well as` a password prompt, like the following:
 ```
@@ -56,6 +57,8 @@ some string + your enter email
 The key's randomart image is:
 some image
 ```
+You have successfully created SSH keys.  
+To double check that you have create the SSH keys, you may look into the ssh directory (i.e., `cd ~/.ssh`) and should have two files named: `id_ed25519` and `id_ed25519.pub`.
 
 ### Adding SSH keys to GitHub/Bitbucket/GitLab
 TODO:
