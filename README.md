@@ -57,11 +57,27 @@ some string + your enter email
 The key's randomart image is:
 some image
 ```
-You have successfully created SSH keys.  
+which indicates that you have successfully created SSH keys.
+
+
 To double check that you have create the SSH keys, you may look into the ssh directory (i.e., `cd ~/.ssh`) and should have two files named: `id_ed25519` and `id_ed25519.pub`.
 
 ### Adding SSH keys to GitHub/Bitbucket/GitLab
-TODO:
+#### GitHub
+Steps to add SSH keys to GitHub:
+
+1. Login to [GitHub](https://github.com/)
+2. Click on your icon on the top right
+3. Click "Settings"
+4. Click "SSH and GPG keys", which locates on the left side-bar under the "Access" section
+5. Click "New SSH key" near the top right
+6. Fill in the blanks:
+    - "Title": a label for the new key, ex. "school-sever"
+    - "Key type": would be "Authentication Key" (default)
+    - "Key": the SSH public key
+        - To get your SSH public key:  open the public SSH key file (i.e., `vim ~/.ssh/id_ed25519.pub`)  copy the SSH public key to your clipboard
+7. Click "Add SSH Key"
+8. Done
 
 ## Git
 TODO: Bingqing
