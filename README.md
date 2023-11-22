@@ -61,8 +61,20 @@ which indicates that you have successfully created SSH keys.
 
 
 To double check that you have create the SSH keys, you may look into the ssh directory (i.e., `cd ~/.ssh`) and should have two files named: `id_ed25519` and `id_ed25519.pub`.
+- `id_ed25519` is the private key ~~DO NOT~~ share with anyone
+- `id_ed25519.pub` is the public key, which will be added to GitHub/Bitbucket/GitLab
 
 ### Adding SSH keys to GitHub/Bitbucket/GitLab
+#### Copy SSH public key
+We will need to first copy the SSH public key.
+
+The SSH public key locates in the SSH directory (i.e., `~/.ssh/`)
+
+Steps to copy SSH public key
+1. Enter the SSH directory -  `cd ~/.ssh/`
+2. Open the file that stores your public key - `vim ./id_ed25519.pub`
+3. Copy the content (i.e., SSH public key) to your clipboard
+
 #### GitHub
 Steps to add SSH keys to GitHub:
 
@@ -75,7 +87,6 @@ Steps to add SSH keys to GitHub:
     - "Title": a label for the new key, ex. "school-sever"
     - "Key type": would be "Authentication Key" (default)
     - "Key": the SSH public key
-        - To get your SSH public key:  open the public SSH key file (i.e., `vim ~/.ssh/id_ed25519.pub`)  copy the SSH public key to your clipboard
 7. Click "Add SSH Key"
 8. Done
 
