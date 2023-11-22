@@ -102,11 +102,58 @@ git push
 ```
 
 ## Bash dot scripts
-TODO: Wenhao
+After you finished previous steps, some configuration on your terminal is recommended. 
 
-`github.com/djhshih/dot`
+#### Copy the default configuration
 
-Applies to both local machine and remote server
+A version of configuration is avaiable on github. Clone the repository and setup it correctly by run following codes line by line:
+
+```bash
+git clone git@github.com:djhshih/dot.git
+sh dot/install.sh
+echo ". ~/.my.bashrc" >> ~/.bashrc && source ~/.bashrc
+```
+
+You will find that the appearance of your shell will be changed. Customized configurations for shell are stored in '$HOME/.my.bashrc'. Other configurations are stored in the home directory. Note that you should **not** delete the 'dot' folder. 
+
+#### Set up conda correctly
+
+After you set up the shell, you also need to set up conda correctly. We should not activate conda environment when we log in as it may conflict with some C++ environments. The idea here is to wrap up a function called `init_conda`. After set up this function, you can activate conda by type `init_conda` directly.
+
+Detailed steps are as follow:
+* Run following code to initialize conda. This will change your `.bashrc` by generating something start with `# >>> conda initialize >>>`
+```bash
+conda init
+```
+
+* Define a function called `init_conda` based on the code in `.bashrc`. Store it in file `.init_conda`. This can be done either manually or by the following code:
+```bash
+# Create .init_conda
+new_file_path="$HOME/.init_conda"
+touch $new_file_path
+
+# Define the start and end markers for the conda initialization code
+start_marker="# >>> conda initialize >>>"
+end_marker="# <<< conda initialize <<<"
+
+# Use awk to extract the conda initialization code and write it to the new file
+awk -v start="$start_marker" -v end="$end_marker" '
+  BEGIN {print "function init_conda() {" > "'"$new_file_path"'";}
+  $0 ~ start {flag=1}
+  flag {print > "'"$new_file_path"'"}
+  $0 ~ end {flag=0; print "}" > "'"$new_file_path"'";}
+' ~/.bashrc
+```
+* Delete the part start with `# >>> conda initialize >>>` in `.bashrc`. This can be done either manully or by the following code:
+```bash
+awk -v start="$start_marker" -v end="$end_marker" -v new_file="$new_file_path" '
+  $0 ~ start {print "source " new_file; flag=1}
+  !flag {print}
+  $0 ~ end {flag=0}
+' ~/.bashrc > ~/.bashrc.tmp
+mv ~/.bashrc.tmp ~/.bashrc && source .bashrc
+```
+When you need to use conda, type `init_conda` and enter it. You will find the `(base)` appeared on the left. This suggested that you have activated conda environment. 
 
 ## Tmux
 TODO: Jonathan
