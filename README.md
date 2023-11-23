@@ -236,7 +236,7 @@ Retype new password:
 `ssh-copy-id` will copy the SSH public key into the `~/.ssh/authorized_keys` on the remote host. Once the key has been authorized for SSH, then you can access to the remote host without a password.
 
 1. Ensure you have the SSH key pair. If you do not have a SSH key pair, please refer to "Generate SSH Keys" section above
-2. Run `ssh-copy-id <user@host>` in the terminal, it will show a password prompt like the following:
+2. Run `ssh-copy-id <user@host>` in the terminal, then a password prompt will show up like the following:
 ```
 user@host's password:
 ```
