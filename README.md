@@ -75,8 +75,8 @@ Steps to copy SSH public key
 2. Open the file that stores your public key - `vim ./id_ed25519.pub`
 3. Copy the content (i.e., SSH public key) to your clipboard
 
-#### Adding SSH key to GitHub
-Steps to add SSH keys to GitHub:
+#### Adding SSH public key to GitHub
+Steps to add SSH public key to GitHub:
 
 1. Login to [GitHub](https://github.com/)
 2. Click on your icon on the top right
@@ -89,6 +89,19 @@ Steps to add SSH keys to GitHub:
     - "Key": the SSH public key
 7. Click "Add SSH Key"
 8. Done
+
+#### Adding SSH public key to Bitbucket
+
+1. Login to [Bitbucket](https://bitbucket.org/account/workspaces)
+2. Click on the cog icon (i.e., Settings) on the top right
+3. Select "Personal Bitbucket settings" under the dropdown meun
+4. On the left-side bar, select "SSH keys" under the "SECURITY" section
+5. Click "Add key"
+6. Fill in the details:
+    - "Label": a label for the new key, ex. "school-sever"
+    - "Key": the SSH public key
+7. Click Add Key
+8. DONE
 
 ## Git
 TODO: Bingqing
