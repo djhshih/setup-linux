@@ -277,3 +277,23 @@ TODO: Bingqing
 
 git clone by HTTPS vs. SSH  
 Add collaborators
+
+## Mac terminal
+MacOS is built on Linux. The software `terminal` in MacOS is a commond line tool and can be used to access server.
+* Use command+space to search `terminal` and open it
+* Use standard commands like `ssh` to access server
+
+## Win terminal
+
+## Access server through `Visual Studio Code`
+Visual Studio Code (VS code) is a code editor developed by Microsoft. It offers various features to make your development easier. One of these features is allow you to access server directly in VS code:
+* Download VS code [here](https://code.visualstudio.com/Download) based on your operation system
+* Open up VS code. Follow [This step](https://code.visualstudio.com/docs/remote/ssh-tutorial) to install the Remote-SSH extension. What you need to do is just to click the button on the page.
+* After finishing, you should see a button in the down left on VScode. Click that botton, select connect to host...
+  * If you have configurations correct, you should see the alies of your server. Click and login
+  * If you haven't configurate correct, you will not see alies of your server. Click Add New SSH Host, type the exact command to login (i.e. `ssh <username>@<server>). Follow the instructions to login
+* It will take several seconds for you to login. After that, you will see your terminal on the bottom. You can navigate the file system by click open folder button. The main panel will be the area you can edit your code.
+
+For further reference, see:
+* [Official Document](https://code.visualstudio.com/docs/remote/ssh)
+* [Tutotial in Chinese](https://zhuanlan.zhihu.com/p/141205262)
