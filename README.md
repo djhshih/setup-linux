@@ -79,7 +79,7 @@ Steps to copy SSH public key
 Steps to add SSH public key to GitHub:
 
 1. Login to [GitHub](https://github.com/)
-2. Click on your icon on the top right
+2. Click on your avatar on the top right
 3. Click "Settings"
 4. Click "SSH and GPG keys", which locates on the left side-bar under the "Access" section
 5. Click "New SSH key" near the top right
@@ -102,6 +102,23 @@ Steps to add SSH public key to GitHub:
     - "Key": the SSH public key
 7. Click Add Key
 8. DONE
+
+
+#### Adding SSH public key to GitLab
+
+1. Login to [GitLab]()
+2. Click on your avatar, locate near the top right of the left-side bar
+3. Select "Edit profile"
+4. On the left-side bar, select "SSH Keys"
+5. Click on the "Add new key" button near the top right
+6. Fill in the details:
+    - "Key" = the SSH public key
+    - "Title" = a label for the new key, ex. "school-sever"
+    - "Usage type" = Authentication & Signing (Default)
+    - "Expiration date" = the expiration date of your public SSH key on GitLab
+        - ex. 2124-11-15 if don't want to set a close expiration date
+7. Click "Add key"
+8. Done
 
 ## Git
 TODO: Bingqing
