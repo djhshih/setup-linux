@@ -131,9 +131,7 @@ Steps to add SSH public key to GitHub:
 7. Click "Add key"
 8. Done
 
-## Git
-
-TODO: Bingqing
+# 
 
 ## Git
 
@@ -164,25 +162,25 @@ Here are some basic guides for you:
   ```
 
 - `git commit`: stage the file you modified after using `git add` into repository. Remind of adding specific comment that will help us remember what you have done. If you just write `git commit` without `-m`,it will launch an editor and you can write a longer comment
-
-```
-git commit -m "<comment>"
-git commit -m "Add git tutorial"
-```
+  
+  ```
+  git commit -m "<comment>"
+  git commit -m "Add git tutorial"
+  ```
 
 - `git pull`: to ensure you have the most up-to-date version of the file, it is advisable for you to type `git pull` before making any changes when you collaborate with your coworker. If you don't do this, you may encounter conflicts when you push your changes to remote.
-
-```
-git pull <remote_name> <branch_name>
-git pull origin main
-```
+  
+  ```
+  git pull <remote_name> <branch_name>
+  git pull origin main
+  ```
 
 - `git push`: push the file you modified after using `git commit` to remote
-
-```
-git push <remote_name> <branch_name>
-git push origin main
-```
+  
+  ```
+  git push <remote_name> <branch_name>
+  git push origin main
+  ```
 
 reference: https://rogerdudler.github.io/git-guide/
 
