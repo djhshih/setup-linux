@@ -232,10 +232,21 @@ Retype new password:
 
 6. Done
 
+### SSH Copy ID
+`ssh-copy-id` will copy the SSH public key into the `~/.ssh/authorized_keys` on the remote host. Once the key has been authorized for SSH, then it will grant access to the remote host without a password.
+
+Below are the steps:
+1. Ensure you have the SSH key pair, please refer to "Generate SSH Keys" section above
+2. Run `ssh-copy-id <user@host>`, it will show a password prompt like the following:
 ```
-passwd
-ssh-copy-id # TODO
+user@host's password:
 ```
+3. Type in your password that you used to login to the remote host
+4. There will be some SSH Key's information indicate you have successfully added the SSH key, like the following:
+```
+Number of key(s) added: 1 
+```
+5. Done
 
 ## Conda environment
 TODO: Yaofu
