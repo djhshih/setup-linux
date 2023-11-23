@@ -1,6 +1,7 @@
 # How to setup a newly created Linux account
 
 ## Virtual machine
+
 TODO: Jonathan
 
 Here are the steps of setting up Fedora on VirtualBox:
@@ -16,9 +17,11 @@ Here are the steps of setting up Fedora on VirtualBox:
 * Reboot the VM and Fedora will be successfully installed onto the VM.
 
 ## SSH key and GitHub/Bitbucket/GitLab
+
 Applies to both local machine and remote server
 
 ### Generate SSH keys
+
 reference: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 We will generate the ssh key through the terminal, at the end, you will have two ssh keys: private ssh key and public ssh key.
@@ -29,6 +32,7 @@ Below are the steps to generate SSH keys:
 2. run `ssh-keygen -t ed25519 -C "your_email@example.com"`
 
 There will be a prompt on where to save the files, like the following:
+
 ```
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (some_path/.ssh/id_ed25519):
@@ -37,18 +41,21 @@ Enter file in which to save the key (some_path/.ssh/id_ed25519):
 3. Simply press Enter to store the files in the default file location.
 
 Then you will see a message indicate that you have successfully created a new directory for the ssh files, as well as` a password prompt, like the following:
+
 ```
 Created directory 'some_path/.ssh'.
 Enter passphrase (empty for no passphrase):
 ```
 
 4. Type your preferred passphrase through the prompt, you will need to type the same passphrase twice, in which the second time is to confirm that the passphrase is the same and correct.
-```
-Enter passphrase (empty for no passphrase): [Type a passphrase] # first time
-Enter same passphrase again: [Type passphrase again] # second time
-```
+   
+   ```
+   Enter passphrase (empty for no passphrase): [Type a passphrase] # first time
+   Enter same passphrase again: [Type passphrase again] # second time
+   ```
 
 You will get messages like the following:
+
 ```
 Your identification has been saved in `/some_path/.ssh/id_ed25519`.
 Your public key has been saved in `/some_path/.ssh/id_ed25519.pub`.
@@ -57,25 +64,30 @@ some string + your enter email
 The key's randomart image is:
 some image
 ```
+
 which indicates that you have successfully created SSH keys.
 
-
 To double check that you have create the SSH keys, you may look into the ssh directory (i.e., `cd ~/.ssh`) and should have two files named: `id_ed25519` and `id_ed25519.pub`.
+
 - `id_ed25519` is the private key **DO NOT** share with anyone
 - `id_ed25519.pub` is the public key, which will be added to GitHub/Bitbucket/GitLab
 
 ### Adding SSH keys to GitHub/Bitbucket/GitLab
+
 #### Copy SSH public key
+
 We will need to first copy the SSH public key.
 
 The SSH public key locates in the SSH directory (i.e., `~/.ssh/`)
 
 Steps to copy SSH public key
+
 1. Enter the SSH directory -  `cd ~/.ssh/`
 2. Open the file that stores your public key - `vim ./id_ed25519.pub`
 3. Copy the content (i.e., SSH public key) to your clipboard
 
 #### Adding SSH public key to GitHub
+
 Steps to add SSH public key to GitHub:
 
 1. Login to [GitHub](https://github.com/)
@@ -84,9 +96,9 @@ Steps to add SSH public key to GitHub:
 4. Click "SSH and GPG keys", which locates on the left side-bar under the "Access" section
 5. Click "New SSH key" near the top right
 6. Fill in the blanks:
-    - "Title": a label for the new key, ex. "school-sever"
-    - "Key type": would be "Authentication Key" (default)
-    - "Key": the SSH public key
+   - "Title": a label for the new key, ex. "school-sever"
+   - "Key type": would be "Authentication Key" (default)
+   - "Key": the SSH public key
 7. Click "Add SSH Key"
 8. Done
 
@@ -98,11 +110,10 @@ Steps to add SSH public key to GitHub:
 4. On the left-side bar, select "SSH keys" under the "SECURITY" section
 5. Click "Add key"
 6. Fill in the details:
-    - "Label": a label for the new key, ex. "school-sever"
-    - "Key": the SSH public key
+   - "Label": a label for the new key, ex. "school-sever"
+   - "Key": the SSH public key
 7. Click Add Key
 8. DONE
-
 
 #### Adding SSH public key to GitLab
 
@@ -112,26 +123,71 @@ Steps to add SSH public key to GitHub:
 4. On the left-side bar, select "SSH Keys"
 5. Click on the "Add new key" button near the top right
 6. Fill in the details:
-    - "Key" = the SSH public key
-    - "Title" = a label for the new key, ex. "school-sever"
-    - "Usage type" = Authentication & Signing (Default)
-    - "Expiration date" = the expiration date of your public SSH key on GitLab
-        - ex. 2124-11-15 if don't want to set a close expiration date
+   - "Key" = the SSH public key
+   - "Title" = a label for the new key, ex. "school-sever"
+   - "Usage type" = Authentication & Signing (Default)
+   - "Expiration date" = the expiration date of your public SSH key on GitLab
+     - ex. 2124-11-15 if don't want to set a close expiration date
 7. Click "Add key"
 8. Done
 
 ## Git
+
 TODO: Bingqing
 
+## Git
+
+TODO: Bingqing
+
+After adding SSH public key to your GitHub, it would be convenient for you to clone repositories or push changes to remotes because there is no need to enter username and password repeatedly.
+
+Git has two obvious advantages:
+
+1. **Version Control**: you could record each version of the code and revert to any specific version if necessary.
+
+2. **Collaboration**: you could collaborate with coworker and make changes to the file in parallel.
+
+Here are some basic guides for you:
+
+- `git clone`: clone remote repo onto the current path of local computer
+  
+  ```
+  git clone <repository_url>
+  git clone git@github.com:djhshih/setup-linux.git
+  ```
+
+- `git add`: keep track of the files you modified in your local computer
+  
+  ```
+  git add <file_name>
+  git add README.md
+  ```
+
+- `git commit`: stage the file you modified after using `git add` into repository. Remind of adding specific comment that will help us remember what you have done. If you just write `git commit` without `-m`,it will launch an editor and you can write a longer comment
+
 ```
-git clone
-git add
-git commit
-git pull
-git push
+git commit -m "<comment>"
+git commit -m "Add git tutorial"
 ```
 
+- `git pull`: to ensure you have the most up-to-date version of the file, it is advisable for you to type `git pull` before making any changes when you collaborate with your coworker. If you don't do this, you may encounter conflicts when you push your changes to remote.
+
+```
+git pull <remote_name> <branch_name>
+git pull origin main
+```
+
+- `git push`: push the file you modified after using `git commit` to remote
+
+```
+git push <remote_name> <branch_name>
+git push origin main
+```
+
+reference: https://rogerdudler.github.io/git-guide/
+
 ## Bash dot scripts
+
 After you finished previous steps, some configuration on your terminal is recommended. 
 
 #### Copy the default configuration
@@ -151,28 +207,35 @@ You will find that the appearance of your shell will be changed. Customized conf
 After you set up the shell, you also need to set up conda correctly. We should not activate conda environment when we log in as it may conflict with some C++ environments. The idea here is to wrap up a function called `init_conda`. After set up this function, you can activate conda by type `init_conda` directly.
 
 Detailed steps are as follow:
+
 * Run following code to initialize conda. This will change your `.bashrc` by generating something start with `# >>> conda initialize >>>`
-```bash
-conda init
-```
+  
+  ```bash
+  conda init
+  ```
 
 * Define a function called `init_conda` based on the code in `.bashrc`. Store it in file `.init_conda`. This can be done either manually or by the following code:
-```bash
-# Create .init_conda
-new_file_path="$HOME/.init_conda"
-touch $new_file_path
+  
+  ```bash
+  # Create .init_conda
+  new_file_path="$HOME/.init_conda"
+  touch $new_file_path
+  ```
 
 # Define the start and end markers for the conda initialization code
+
 start_marker="# >>> conda initialize >>>"
 end_marker="# <<< conda initialize <<<"
 
 # Use awk to extract the conda initialization code and write it to the new file
+
 awk -v start="$start_marker" -v end="$end_marker" '
   BEGIN {print "function init_conda() {" > "'"$new_file_path"'";}
   $0 ~ start {flag=1}
   flag {print > "'"$new_file_path"'"}
   $0 ~ end {flag=0; print "}" > "'"$new_file_path"'";}
 ' ~/.bashrc
+
 ```
 * Delete the part start with `# >>> conda initialize >>>` in `.bashrc`. This can be done either manully or by the following code:
 ```bash
@@ -183,9 +246,11 @@ awk -v start="$start_marker" -v end="$end_marker" -v new_file="$new_file_path" '
 ' ~/.bashrc > ~/.bashrc.tmp
 mv ~/.bashrc.tmp ~/.bashrc && source .bashrc
 ```
+
 When you need to use conda, type `init_conda` and enter it. You will find the `(base)` appeared on the left. This suggested that you have activated conda environment. 
 
 ## Tmux
+
 TODO: Jonathan
 
 Tmux is useful for organizing multiple tasks and directories in a server. Tmux keeps processes running even when you disconnect from the server, retaining your progress which is useful for many tasks.  
@@ -193,6 +258,7 @@ Tmux is useful for organizing multiple tasks and directories in a server. Tmux k
 Initiate tmux with `tmux`, assuming your `~/.bashrc` file has set an alias to tmux that points it to a tmux executable. The default keys for PREFIX are Ctrl + B. Using the above tmux config, the PREFIX is `.  
 
 Here are some useful tmux commands:  
+
 * PREFIX + C : Create new window
 * PREFIX + X : Delete current pane
 * PREFIX + , : Rename current window
@@ -205,6 +271,7 @@ Here are some useful tmux commands:
 When you disconnect from the server and have to reinitialize tmux, use `tmux attach` to attach the previous tmux session.
 
 ## Remote server login
+
 ### Change password
 
 1. Run `passwd` in the terminal, which will give a password prompt, like the following:
@@ -222,9 +289,10 @@ New password:
 ```
 
 3. Enter your desired new password and click enter, you will receive another prompt on retyping the new password.  Note that your password should be longer than 10 characters, otherwise you will receiver a message `The password is shorter than 10 characters`
-```
-Retype new password:
-```
+   
+   ```
+   Retype new password:
+   ```
 
 4. Retype your desired new password and click enter
 
@@ -233,24 +301,33 @@ Retype new password:
 6. Done
 
 ### SSH Copy ID
+
 `ssh-copy-id` will copy the SSH public key into the `~/.ssh/authorized_keys` on the remote host. Once the key has been authorized for SSH, then you can access to the remote host without a password.
 
 1. Ensure you have the SSH key pair. If you do not have a SSH key pair, please refer to "Generate SSH Keys" section above
+
 2. Run `ssh-copy-id <user@host>` in the terminal, then a password prompt will show up like the following:
-```
-user@host's password:
-```
+   
+   ```
+   user@host's password:
+   ```
+
 3. Type in your password that you used to login to the remote host
-```
-user@host's password: <password>
-```
-4.  Number of keys in the remote host will show up, indicating that you have successfully added the SSH key, like the following:
-```
-Number of key(s) added: 1 
-```
+   
+   ```
+   user@host's password: <password>
+   ```
+
+4. Number of keys in the remote host will show up, indicating that you have successfully added the SSH key, like the following:
+   
+   ```
+   Number of key(s) added: 1 
+   ```
+
 5. Done
 
 ## Conda environment
+
 TODO: Yaofu
 
 Note: The instructions are specific to the GPU server
@@ -263,6 +340,7 @@ conda activate pytorch
 ## Jupyter lab on remote server and SSH tunnel
 
 To do so, follow these steps:
+
 * On **server**:
   * Active environment: type `init_conda` to start conda. Type `conda activate <your_target_environment` to activate a conda environment
   * Start Jupyter: type `jupyter lab`. 2 websits will appear. The one with following format `http://<server_port>/?tocken=...` is of interest
@@ -273,20 +351,25 @@ To do so, follow these steps:
 For example, after start Jupyter in the server, you got a link `http://127.0.0.1:8890/?token=xxxx`. When you are building the tunnel, `<local_port>:<server_port>` need to be replace by `8888:127.0.0.1:8890`. Then paste the whole link in web browser and you will get in. Note that you should not close the terminal in your own PC. If you want to open up multiple Jupyter Lab, you need to repeat this process. 
 
 ## GitHub
+
 TODO: Bingqing
 
 git clone by HTTPS vs. SSH  
 Add collaborators
 
 ## Mac terminal
+
 MacOS is built on Linux. The software `terminal` in MacOS is a commond line tool and can be used to access server.
+
 * Use command+space to search `terminal` and open it
 * Use standard commands like `ssh` to access server
 
 ## Win terminal
 
 ## Access server through `Visual Studio Code`
+
 Visual Studio Code (VS code) is a code editor developed by Microsoft. It offers various features to make your development easier. One of these features is allow you to access server directly in VS code:
+
 * Download VS code [here](https://code.visualstudio.com/Download) based on your operation system
 * Open up VS code. Follow [This step](https://code.visualstudio.com/docs/remote/ssh-tutorial) to install the Remote-SSH extension. What you need to do is just to click the button on the page.
 * After finishing, you should see a button in the down left on VScode. Click that botton, select connect to host...
@@ -295,5 +378,6 @@ Visual Studio Code (VS code) is a code editor developed by Microsoft. It offers 
 * It will take several seconds for you to login. After that, you will see your terminal on the bottom. You can navigate the file system by click open folder button. The main panel will be the area you can edit your code.
 
 For further reference, see:
+
 * [Official Document](https://code.visualstudio.com/docs/remote/ssh)
 * [Tutotial in Chinese](https://zhuanlan.zhihu.com/p/141205262)
