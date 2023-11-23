@@ -106,8 +106,8 @@ Steps to add SSH public key to GitHub:
 
 #### Adding SSH public key to GitLab
 
-1. Login to [GitLab]()
-2. Click on your avatar, locate near the top right of the left-side bar
+1. Login to [GitLab](https://about.gitlab.com/)
+2. Click on your avatar near the top right of the left-side bar
 3. Select "Edit profile"
 4. On the left-side bar, select "SSH Keys"
 5. Click on the "Add new key" button near the top right
