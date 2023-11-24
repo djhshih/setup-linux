@@ -352,8 +352,39 @@ For example, after start Jupyter in the server, you got a link `http://127.0.0.1
 
 TODO: Bingqing
 
-git clone by HTTPS vs. SSH  
-Add collaborators
+### Invite coworker as your collaborator:
+
+1. Navigate to the repository page on GitHub.
+
+2. Click on `Setting` on the top of the repository page.
+
+3. Select `Collaborators` and click on `Add people` tab.
+
+4. Enter the GitHub username or email address of the person you want to invite.
+
+5. Finish invitation once the person accept yours.
+   
+   
+
+### The difference of `git clone` between using HTTPS and SSH:
+
+1. `HTTPS`: when you use HTTPS to clone a remote repository, you need to provide username and password to authenticate yourself.
+   
+   ```
+   git clone https://github.com/djhshih/setup-linux.git
+   git clone https://github.com/username/repository.git
+   ```
+
+ 
+
+2. `SSH`: you can use SSH to clone a repository without entering username and password if you associate your local computer with remote GitHub.
+   
+   ```
+   git clone git@github.com:djhshih/setup-linux.git
+   git clone git@github.com:username/repository.git
+   ```
+
+
 
 ## Mac terminal
 
