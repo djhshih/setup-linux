@@ -207,18 +207,17 @@ After you set up the shell, you also need to set up conda correctly. We should n
 Detailed steps are as follow:
 
 * Run following code to initialize conda. This will change your `.bashrc` by generating something start with `# >>> conda initialize >>>`
-  
-  ```bash
-  conda init
-  ```
+```bash
+ conda init
+```
 
 * Define a function called `init_conda` based on the code in `.bashrc`. Store it in file `.init_conda`. This can be done either manually or by the following code:
   
-  ```bash
+```bash
   # Create .init_conda
   new_file_path="$HOME/.init_conda"
   touch $new_file_path
-  ```
+
 
 # Define the start and end markers for the conda initialization code
 
@@ -233,7 +232,6 @@ awk -v start="$start_marker" -v end="$end_marker" '
   flag {print > "'"$new_file_path"'"}
   $0 ~ end {flag=0; print "}" > "'"$new_file_path"'";}
 ' ~/.bashrc
-
 ```
 * Delete the part start with `# >>> conda initialize >>>` in `.bashrc`. This can be done either manully or by the following code:
 ```bash
