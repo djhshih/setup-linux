@@ -363,8 +363,6 @@ TODO: Bingqing
 4. Enter the GitHub username or email address of the person you want to invite.
 
 5. Finish invitation once the person accept yours.
-   
-   
 
 ### The difference of `git clone` between using HTTPS and SSH:
 
@@ -372,19 +370,13 @@ TODO: Bingqing
    
    ```
    git clone https://github.com/djhshih/setup-linux.git
-   git clone https://github.com/username/repository.git
    ```
 
- 
-
-2. `SSH`: you can use SSH to clone a repository without entering username and password if you associate your local computer with remote GitHub.
+2. `SSH`: you can use SSH to clone a repository without entering username and password if you associate your local computer with remote GitHub(as mentioned Sabove *Adding SSH public key to GitHub*).
    
    ```
    git clone git@github.com:djhshih/setup-linux.git
-   git clone git@github.com:username/repository.git
    ```
-
-
 
 ## Mac terminal
 
