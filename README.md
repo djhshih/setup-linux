@@ -372,7 +372,7 @@ TODO: Bingqing
    git clone https://github.com/djhshih/setup-linux.git
    ```
 
-2. `SSH`: you can use SSH to clone a repository without entering username and password if you associate your local computer with remote GitHub(as mentioned Sabove *Adding SSH public key to GitHub*).
+2. `SSH`: you can use SSH to clone a repository without entering username and password if you associate your local computer with remote GitHub(as mentioned above *Adding SSH public key to GitHub*).
    
    ```
    git clone git@github.com:djhshih/setup-linux.git
