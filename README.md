@@ -211,6 +211,12 @@ Detailed steps are as follow:
     conda init
    ```
 
+   Note: on `Gemina (ds03)` , please use following command to locate conda first:
+   ```bash
+   . /home/conda/bin/activate
+   conda init
+   ```
+
 * Define a function called `init_conda` based on the code in `~/.bashrc`. Store it in file `~/.init_conda`. This can be done either manually or by the following code:
   
    ```bash
