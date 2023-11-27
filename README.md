@@ -335,7 +335,7 @@ conda activate pytorch
 To do so, follow these steps:
 
 * On **server**:
-  * Active environment: type `init_conda` to start conda. Type `conda activate <your_target_environment` to activate a conda environment
+  * Active environment: type `init_conda` to start conda (See `Set up conda correctly`). Type `conda activate <your_target_environment` to activate a conda environment
   * Start Jupyter: type `jupyter lab`. 2 websits will appear. The one with following format `http://<server_port>/?tocken=...` is of interest
 * On your **own PC**:
   * Build tunnel: open up a terminal. Type `ssh -L <local_port>:<server_port> <user_name>@<server_name>`. Type in your password. This will leads you to the server
@@ -387,7 +387,7 @@ MacOS is built on Linux. The software `terminal` in MacOS is a commond line tool
 Visual Studio Code (VS code) is a code editor developed by Microsoft. It offers various features to make your development easier. One of these features is allow you to access server directly in VS code:
 
 * Download VS code [here](https://code.visualstudio.com/Download) based on your operation system
-* Open up VS code. Follow [This step](https://code.visualstudio.com/docs/remote/ssh-tutorial) to install the Remote-SSH extension. What you need to do is just to click the button on the page.
+* Open up VS code. Follow [This step](https://code.visualstudio.com/docs/remote/ssh-tutorial) to install the Remote-SSH extension (Just click the button on the page)
 * After finishing, you should see a button in the down left on VScode. Click that botton, select connect to host...
   * If you have configurations correct, you should see the alies of your server. Click and login
   * If you haven't configurate correct, you will not see alies of your server. Click Add New SSH Host, type the exact command to login (i.e. `ssh <username>@<server>). Follow the instructions to login
@@ -397,3 +397,34 @@ For further reference, see:
 
 * [Official Document](https://code.visualstudio.com/docs/remote/ssh)
 * [Tutotial in Chinese](https://zhuanlan.zhihu.com/p/141205262)
+
+
+## 'patefiant'
+
+'patefiant' is a wrapper for common software download without root access. See the [Github repo](https://github.com/djhshih/patefiant) for more information. 
+
+#### Set up 'patefiant' 
+NB : a bug is in `patefiant` repo so do not run it now (2021.11.27)
+
+To set up `patefiant`, you need to clone the repo and set up a installation path (`DESTDIR~`). Is is highly recommended to save this installation path into your `$HOME/.bashrc` when you start
+```bash
+# Set up a path for further installations:
+echo 'export DESTDIR=<YOUR TARTGET DIR>' >> ~/.bashrc && source ~/.bashrc
+```
+
+Then clone and install. 
+```bash
+# Clone and installation
+git clone git@github.com:djhshih/patefiant.git && cd patefiant
+./install.sh && . $HOME/.bashrc
+```
+After your succesful install, `fac` command will be available.
+
+#### Install softwares through 'fac'
+To install packages, you can use 'fac' as an alternative. Avaiable packagese are listed [here](https://github.com/djhshih/patefiant/tree/master/pkg). To install, for example, 'cromwell':
+
+```bash
+fac install cromwell
+```
+
+File will be installed in `$DESTDIR/bin`.
