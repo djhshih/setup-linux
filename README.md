@@ -211,7 +211,7 @@ Detailed steps are as follow:
     conda init
    ```
 
-   Note: on `Gemina (ds03)` , please use following command to locate conda first:
+   Note: on `Gemina (ds03)` and  `Geminus (ds02)`, please use following command to locate conda first:
    ```bash
    . /home/conda/bin/activate
    conda init
