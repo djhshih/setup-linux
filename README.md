@@ -412,10 +412,10 @@ For further reference, see:
 #### Set up 'patefiant' 
 NB : a bug is in `patefiant` repo so do not run it now (2021.11.27)
 
-To set up `patefiant`, you need to clone the repo and set up a installation path (`DESTDIR~`). Is is highly recommended to save this installation path into your `$HOME/.bashrc` when you start
+To set up `patefiant`, you need to clone the repo and set up a installation path (`DESTDIR~`). You need to specify the target directory for all files first: 
 ```bash
 # Set up a path for further installations:
-echo 'export DESTDIR=<YOUR TARTGET DIR>' >> ~/.bashrc && source ~/.bashrc
+export DESTDIR=<YOUR TARTGET DIR>
 ```
 
 Then clone and install. 
