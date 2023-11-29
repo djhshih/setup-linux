@@ -182,7 +182,7 @@ Here are some basic guides for you:
 
 reference: https://rogerdudler.github.io/git-guide/
 
-## Bash dot scripts
+## Shell configuration 
 
 After you finished previous steps, some configuration on your terminal is recommended. 
 
@@ -391,15 +391,15 @@ TODO: Bingqing
    ```
    git clone git@github.com:djhshih/setup-linux.git
    ```
-
-## Mac terminal
+## Terminals
+### Mac terminal
 
 MacOS is built on Linux. The software `terminal` in MacOS is a commond line tool and can be used to access server.
 
 * Use command+space to search `terminal` and open it
 * Use standard commands like `ssh` to access server
 
-## Win terminal
+### Win terminal
 
 ## Access server through `Visual Studio Code`
 
@@ -418,7 +418,7 @@ For further reference, see:
 * [Tutotial in Chinese](https://zhuanlan.zhihu.com/p/141205262)
 
 
-## 'patefiant'
+## Local software installation
 
 'patefiant' is a wrapper for common software download without root access. See the [Github repo](https://github.com/djhshih/patefiant) for more information. 
 
