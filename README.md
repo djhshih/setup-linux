@@ -331,10 +331,27 @@ TODO: Yaofu
 
 Note: The instructions are specific to the GPU server
 
+
+To activate a Conda environment in the current shell session
 ```
 . /home/conda/bin/activate
 conda activate pytorch
 ```
+If the activation is successful, `(base)` will appear in the command line.
+
+
+To check all the Conda environments that have been created on your server
+```
+conda info --envs
+```
+
+To deactivate a Conda environment and return to the default system environment 
+```
+conda deactivate
+```
+
+
+
 
 ## Jupyter lab on remote server and SSH tunnel
 
