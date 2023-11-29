@@ -2,19 +2,17 @@
 
 ## Virtual machine
 
-TODO: Jonathan
-
 Here are the steps of setting up Fedora on VirtualBox:
 
-* Download VirtualBox (https://www.virtualbox.org/wiki/Downloads) and Live ISO file for Fedora Workstation (https://fedoraproject.org/workstation/download).
-* Open VirtualBox and create a new virtual machine (VM). Choose a custom name for the VM and select the recently-downloaded ISO file.
-* Choose base memory, processors and virtual hard disk size you are willing to allocate to the VM (e.g. base memory: 8GB, processors: 8CPU, virtual HDD size: 250GB).  
-* Bootup the VM and start Fedora Workstation. Once it boots to desktop, select Install to Hard Drive and choose English (US) for language settings.
-* Click on installation destination. Choose the virtual hard disk and custom installation before performing manual partitioning.  
-* In the manual partitioning section, select standard partition. Create mount points for /home, /boot, / and biosboot with your desired capacities (e.g. /home: 200GB, /: 20GB, /boot: 0.5GB, biosboot: 1MB).  
-* Click Done, Accept Changes and wait for Fedora installation to complete.
-* Once complete, turn off the VM and go to Storage settings of the VM to remove ISO file from Controller: IDE.
-* Reboot the VM and Fedora will be successfully installed onto the VM.
+1. Download VirtualBox (https://www.virtualbox.org/wiki/Downloads) and Live ISO file for Fedora Workstation (https://fedoraproject.org/workstation/download).
+1. Open VirtualBox and create a new virtual machine (VM). Choose a custom name for the VM and select the recently-downloaded ISO file.
+1. Choose base memory, processors and virtual hard disk size you are willing to allocate to the VM (e.g. base memory: 8GB, processors: 8CPU, virtual HDD size: 250GB).  
+1. Bootup the VM and start Fedora Workstation. Once it boots to desktop, select Install to Hard Drive and choose English (US) for language settings.
+1. Click on installation destination. Choose the virtual hard disk and custom installation before performing manual partitioning.  
+1. In the manual partitioning section, select standard partition. Create mount points for /home, /boot, / and biosboot with your desired capacities (e.g. /home: 200GB, /: 20GB, /boot: 0.5GB, biosboot: 1MB).  
+1. Click Done, Accept Changes and wait for Fedora installation to complete.
+1. Once complete, turn off the VM and go to Storage settings of the VM to remove ISO file from Controller: IDE.
+1. Reboot the VM and Fedora will be successfully installed onto the VM.
 
 ## SSH key and GitHub/Bitbucket/GitLab
 
@@ -249,8 +247,6 @@ Detailed steps are as follow:
 When you need to use conda, type `init_conda` and enter it. You will find the `(base)` appeared on the left. This suggested that you have activated conda environment. 
 
 ## Tmux
-
-TODO: Jonathan
 
 Tmux is useful for organizing multiple tasks and directories in a server. Tmux keeps processes running even when you disconnect from the server, retaining your progress which is useful for many tasks.  
 
