@@ -20,8 +20,6 @@ Applies to both local machine and remote server
 
 ### Generate SSH keys
 
-reference: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-
 We will generate the ssh key through the terminal, at the end, you will have two ssh keys: private ssh key and public ssh key.
 
 Below are the steps to generate SSH keys:
@@ -69,6 +67,8 @@ To double check that you have create the SSH keys, you may look into the ssh dir
 
 - `id_ed25519` is the private key **DO NOT** share with anyone
 - `id_ed25519.pub` is the public key, which will be added to GitHub/Bitbucket/GitLab
+
+Reference: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 ### Adding SSH keys to GitHub/Bitbucket/GitLab
 
