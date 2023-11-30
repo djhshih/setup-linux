@@ -45,10 +45,10 @@ Enter passphrase (empty for no passphrase):
 
 4. Type your preferred passphrase through the prompt, you will need to type the same passphrase twice, in which the second time is to confirm that the passphrase is the same and correct.
    
-   ```
-   Enter passphrase (empty for no passphrase): [Type a passphrase] # first time
-   Enter same passphrase again: [Type passphrase again] # second time
-   ```
+```
+Enter passphrase (empty for no passphrase): [Type a passphrase] # first time
+Enter same passphrase again: [Type passphrase again] # second time
+```
 
 You will get messages like the following:
 
@@ -68,7 +68,9 @@ To double check that you have create the SSH keys, you may look into the ssh dir
 - `id_ed25519` is the private key **DO NOT** share with anyone
 - `id_ed25519.pub` is the public key, which will be added to GitHub/Bitbucket/GitLab
 
+
 Reference: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
 
 ### Adding SSH keys to GitHub/Bitbucket/GitLab
 
