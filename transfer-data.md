@@ -20,7 +20,7 @@ ssh-copy-id <username>@<ds03_address>
 ssh-copy-id <username>@<ds02_address>
 ```
 
-## Step 2. File trasfer
+## Step 2. File transfer
 Suppose we want to transfer a file in `ds02` called `dummy.txt` to a target location `ds03`, two different ways are avaiable: **push** and **pull**
 
 * Push: operate in `ds02` and "send" the file `dummy.txt` to `ds03`
@@ -28,20 +28,20 @@ Suppose we want to transfer a file in `ds02` called `dummy.txt` to a target loca
 
 Cauton: some servers may disable pushing, but most servers would allow pulling
 
-### Push:
+### Via push:
 Push can be acheived by following command on **`ds02`**
 ```bash
 # Run on ds02
 rsync <path_to_dummy.txt> <username>@<ds03_address>:<path_to_put_dummy.txt>
 ```
 
-### Pull:
+### Via pull:
 Push can be acheived by following command on **`ds03`**
 ```bash
 # Run on ds03
 rsync <username>@<ds02_address> <path_to_put_dummy.txt> 
 ```
-Cauton: some servers may disable pushing, but most servers would allow pulling
+Caution: some servers may disable pushing, but most servers would allow pulling
 
 
 ## Tips:
@@ -71,7 +71,7 @@ Host ds03
 Pushing files to dummy.txt `ds03` will be writen as:
 ```bash
 # Run on ds02
-rsync <path_to_dummy.txt> ds03:<path_to_put_dummy.txt>
+rsync -avun <path_to_dummy.txt> ds03:<path_to_put_dummy.txt>
 ```
 
 
