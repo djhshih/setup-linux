@@ -230,20 +230,23 @@ Detailed steps are as follow:
    
    # Use awk to extract the conda initialization code and write it to the new file
    awk -v start="$start_marker" -v end="$end_marker" '
-     BEGIN {print "function init_conda() {" > "'"$new_file_path"'";}
-     $0 ~ start {flag=1}
-     flag {print > "'"$new_file_path"'"}
-     $0 ~ end {flag=0; print "}" > "'"$new_file_path"'";}
-   ' ~/.bashrc
+      BEGIN {print "function init_conda() {" >> "'"$new_file_path"'";} 
+      $0 ~ start {flag=1; next} 
+      flag && !($0 ~ end) {print >> "'"$new_file_path"'"} 
+      $0 ~ end {flag=0; print "}" >> "'"$new_file_path"'";} 
+   ' $HOME/.bashrc
    ```
+   
 * Delete the part start with `# >>> conda initialize >>>` in `~/.bashrc`. This can be done either manully or by the following code:
   ```bash
+  cat  ~/.bashrc > ~/.bashrc.old
   awk -v start="$start_marker" -v end="$end_marker" -v new_file="$new_file_path" '
     $0 ~ start {print "source " new_file; flag=1}
     !flag {print}
     $0 ~ end {flag=0}
    ' ~/.bashrc > ~/.bashrc.tmp
-  mv ~/.bashrc.tmp ~/.bashrc && source ~/.bashrc
+  mv ~/.bashrc.tmp ~/.bashrc
+  source ~/.bashrc
   ```
 
 When you need to use conda, type `init_conda` and enter it. You will find the `(base)` appeared on the left. This suggested that you have activated conda environment. 
