@@ -27,3 +27,11 @@ To use `pytorch`, you need to activate the environment
 $ conda activate pytorch
 ```
 
+To see GPU usage, do
+
+```
+nvidia-smi
+```
+
+As you can see from the output above, this server has 8 GPU cards.
+You should try to select GPU cards that are unused.
