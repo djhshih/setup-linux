@@ -33,5 +33,5 @@ To see GPU usage, do
 nvidia-smi
 ```
 
-As you can see from the output above, this server has 8 GPU cards.
+As you can see from the output above, this server has 8x NVIDIA RTX 3090 GPU cards.
 You should try to select GPU cards that are unused.
