@@ -217,6 +217,8 @@ Detailed steps are as follow:
    conda init
    ```
 
+FIXME: Wenhao. Don't automate insertion of configuration. Tell the user what to insert.
+
 * Define a function called `init_conda` based on the code in `~/.bashrc`. Store it in file `~/.init_conda`. This can be done either manually or by the following code:
   
    ```bash
