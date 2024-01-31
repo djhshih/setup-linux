@@ -206,7 +206,7 @@ After you set up the shell, you also need to set up conda correctly. We should n
 
 Detailed steps are as follow:
 
-* Run following code to initialize conda. This will change your `~/.bashrc` by generating something start with `# >>> conda initialize >>>`
+* Run following code to initialize conda. This will change your `~/.bashrc` by generating something start with `# >>> conda initialize >>>` and end with `# <<< conda initialize <<<`
    ```bash
     conda init
    ```
@@ -217,39 +217,19 @@ Detailed steps are as follow:
    conda init
    ```
 
-FIXME: Wenhao. Don't automate insertion of configuration. Tell the user what to insert.
-
-* Define a function called `init_conda` based on the code in `~/.bashrc`. Store it in file `~/.init_conda`. This can be done either manually or by the following code:
+* Create another file `~/.init_conda`. Wrap up a function called init_conda as follow: 
+```
+function init_conda() {
+   < paste all contents between `# >>> conda initialize >>>` and `# <<< conda initialize <<<` in ~/.bashrc here >
+}
+```
   
-   ```bash
-   # Create .init_conda
-   new_file_path="$HOME/.init_conda"
-   touch $new_file_path
-   
-   # Define the start and end markers for the conda initialization code 
-   start_marker="# >>> conda initialize >>>"
-   end_marker="# <<< conda initialize <<<"
-   
-   # Use awk to extract the conda initialization code and write it to the new file
-   awk -v start="$start_marker" -v end="$end_marker" '
-      BEGIN {print "function init_conda() {" >> "'"$new_file_path"'";} 
-      $0 ~ start {flag=1; next} 
-      flag && !($0 ~ end) {print >> "'"$new_file_path"'"} 
-      $0 ~ end {flag=0; print "}" >> "'"$new_file_path"'";} 
-   ' $HOME/.bashrc
-   ```
-   
-* Delete the part start with `# >>> conda initialize >>>` in `~/.bashrc`. This can be done either manully or by the following code:
-  ```bash
-  cat  ~/.bashrc > ~/.bashrc.old
-  awk -v start="$start_marker" -v end="$end_marker" -v new_file="$new_file_path" '
-    $0 ~ start {print "source " new_file; flag=1}
-    !flag {print}
-    $0 ~ end {flag=0}
-   ' ~/.bashrc > ~/.bashrc.tmp
-  mv ~/.bashrc.tmp ~/.bashrc
-  source ~/.bashrc
-  ```
+* Delete all contents between `# >>> conda initialize >>>` and `# <<< conda initialize <<<` in `~/.bashrc`.
+* Add following line in `~/.bashrc`
+```
+source ~/.init_conda
+```
+* Soure your `~/.bashrc`
 
 When you need to use conda, type `init_conda` and enter it. You will find the `(base)` appeared on the left. This suggested that you have activated conda environment. 
 
