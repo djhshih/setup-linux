@@ -1,0 +1,29 @@
+# GPU server
+
+HostName: `gpu02.sbms.hku.hk`
+
+Access the server by `ssh`.
+
+A central conda is installed in `/home/conda`.
+
+Ensure that you are using the following `conda`:
+
+```
+$ which conda
+/home/conda/bin/conda
+```
+
+The `pytorch` and `tensorflow` packages are already installed:
+
+```
+$ conda env list
+base                  *  /home/conda
+pytorch                  /home/conda/envs/pytorch
+tensorflow               /home/conda/envs/tensorflow
+```
+
+To use `pytorch`, you need to activate the environment
+```
+$ conda activate pytorch
+```
+
