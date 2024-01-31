@@ -310,10 +310,18 @@ New password:
 
 ## Conda environment
 
-TODO: Wenhao: Update and mention conda env, Python, using conda vs. pip.
+When we are using python, the best practice is to make different conda environments for different projects. It will help to reduce potential conflicts between packages and make your project easy to be dispatch.
 
-Note: The instructions are specific to the GPU server
+When you are using tools from others, it will be very common that their tool is also in a python environment. You should follow the instruction given by the author to install them correctly.  
 
+Some other tips are as follow:
+
+* When creating the environment, python version may be important (specified by `python=<version>`). Follow the instructions of authors, or try different versions of python if you experience some trouble
+
+* `pip` or `conda`: both of them can be used the install python packages. A main difference is that `conda` will do a more robust environment check than `pip`. It is preferred *not* to mix `pip` and `conda` in the same python environment (i.e. if the first package is installed via `pip`, then stick to `pip`). For more explanations about the difference between `pip` and `conda`, [check this page](https://www.anaconda.com/blog/understanding-conda-and-pip). 
+
+
+Note: Following instructions are specific to the GPU server
 
 To activate a Conda environment in the current shell session
 ```
