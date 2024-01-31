@@ -330,7 +330,7 @@ New password:
 
 ## Conda environment
 
-TODO: Yaofu
+TODO: Wenhao: Update and mention conda env, Python, using conda vs. pip.
 
 Note: The instructions are specific to the GPU server
 
