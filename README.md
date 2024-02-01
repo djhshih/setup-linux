@@ -429,3 +429,15 @@ fac install cromwell
 ```
 
 File will be installed in `$DESTDIR/bin`.
+
+
+### Working with others
+
+Depending on our the administrators set up the Linux server, read access may be disabled by default for all other users.
+
+Read/write/execute access is controlled for 3 groups: owner, users belonging to the owner's group, and all other users.
+
+To ensure read access and directory access for all users, do the following:
+```
+chmod -R go+rX $HOME
+```
