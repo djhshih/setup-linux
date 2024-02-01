@@ -135,7 +135,6 @@ Steps to add SSH public key to GitHub:
 
 ## Git
 
-TODO: Bingqing
 
 After adding SSH public key to your GitHub, it would be convenient for you to clone repositories or push changes to remotes because there is no need to enter username and password repeatedly.
 
@@ -359,7 +358,6 @@ For example, after start Jupyter in the server, you got a link `http://127.0.0.1
 
 ## GitHub
 
-TODO: Bingqing
 
 ### Invite coworker as your collaborator:
 
