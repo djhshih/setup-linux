@@ -392,8 +392,13 @@ MacOS is built on Linux. The software `terminal` in MacOS is a commond line tool
 * Use command+space to search `terminal` and open it
 * Use standard commands like `ssh` to access server
 
-**Note**: Do not use MacFUSE or sshfs on Mac. The Mac implementation is buggy, creates too many connections, and causes instability for the server.
-(Any software like VSCode that list remote directory structures most likely use MacFUSE and sshfs.)
+**Note**: Do not use MacFUSE or sshfs on Mac. The Mac implementation is buggy, creates too many connection requests, and causes instability for the server.
+Any software like VSCode that list remote directory structures most likely use MacFUSE and sshfs.
+
+#### Reference
+1. https://github.com/osxfuse/osxfuse/issues/45
+2. https://github.com/osxfuse/osxfuse/issues/801
+
 
 ## Local software installation
 
