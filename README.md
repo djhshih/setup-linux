@@ -405,15 +405,8 @@ Any software like VSCode that list remote directory structures most likely use M
 'patefiant' is a wrapper for common software download without root access. See the [Github repo](https://github.com/djhshih/patefiant) for more information. 
 
 #### Set up 'patefiant' 
-NB : a bug is in `patefiant` repo so do not run it now (2021.11.27)
 
-To set up `patefiant`, you need to clone the repo and set up a installation path (`DESTDIR~`). You need to specify the target directory for all files first: 
-```bash
-# Set up a path for further installations:
-export DESTDIR=<YOUR TARTGET DIR>
-```
-
-Then clone and install. 
+To set up `patefiant`, you need to clone the repo and install. 
 ```bash
 # Clone and installation
 git clone git@github.com:djhshih/patefiant.git && cd patefiant
@@ -422,13 +415,13 @@ git clone git@github.com:djhshih/patefiant.git && cd patefiant
 After your succesful install, `fac` command will be available.
 
 #### Install softwares through 'fac'
-To install packages, you can use 'fac' as an alternative. Avaiable packagese are listed [here](https://github.com/djhshih/patefiant/tree/master/pkg). To install, for example, 'cromwell':
+To install packages, you can use 'fac install <pkg>'. Avaiable packagese are listed [here](https://github.com/djhshih/patefiant/tree/master/pkg). To install, for example, 'cromwell':
 
 ```bash
 fac install cromwell
 ```
 
-File will be installed in `$DESTDIR/bin`.
+For more detailed instructions, please refer to [here](https://github.com/djhshih/setup-linux/blob/main/patefiant.md)
 
 
 ### Working with others
