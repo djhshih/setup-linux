@@ -5,7 +5,7 @@ A handy vim plugin called [vim-slime](https://github.com/jpalardy/vim-slime) wil
 ## Plugin install:
 
 * Create a `.vimrc` file in your home directory `~`. 
-* Copy all contents in [this file](https://github.com/djhshih/dot/blob/main/.vimrc) into `~/.vimrc`, save the `~/.vimrc` (Note: currently a typo on line 17, should be `g:slime_no_mappings`)
+* Copy all contents in [this file](https://github.com/djhshih/dot/blob/main/.vimrc) into `~/.vimrc`, save the `~/.vimrc` (Note: line 17, should be removed)
 * Re-open `~/.vimrc`, type `:PlugInstall`, the install process will start.
 * After the install process finished, close all windows
 
