@@ -384,21 +384,6 @@ For example, after start Jupyter in the server, you got a link `http://127.0.0.1
    ```
    git clone git@github.com:djhshih/setup-linux.git
    ```
-## Terminals
-### Mac terminal
-
-MacOS is built on Linux. The software `terminal` in MacOS is a commond line tool and can be used to access server.
-
-* Use command+space to search `terminal` and open it
-* Use standard commands like `ssh` to access server
-
-**Note**: Do not use MacFUSE or sshfs on Mac. The Mac implementation is buggy, creates too many connection requests, and causes instability for the server.
-Any software like VSCode that list remote directory structures most likely use MacFUSE and sshfs.
-
-#### Reference
-1. https://github.com/osxfuse/osxfuse/issues/45
-2. https://github.com/osxfuse/osxfuse/issues/801
-
 
 ## Local software installation
 
@@ -424,7 +409,7 @@ fac install cromwell
 For more detailed instructions, please refer to [here](https://github.com/djhshih/setup-linux/blob/main/patefiant.md)
 
 
-### Working with others
+## Working with others
 
 Depending on our the administrators set up the Linux server, read access may be disabled by default for all other users.
 
@@ -434,3 +419,30 @@ To ensure read access and directory access for all users, do the following:
 ```
 chmod -R go+rX $HOME
 ```
+
+
+## MacOS
+
+MacOS is derived from OpenBSD, which is different Linux. Some MacOS command line tools have similar names as tools in Linux
+but they are independently implemented and often have different behaviour.
+
+In the interest of cross-platform compatability, Linux (GNU) command line tools should be preferred over MacOS's native command line tools.
+
+The software `terminal` in MacOS is a commond line tool and can be used to access server.
+
+* Use command+space to search `terminal` and open it
+* Use standard commands like `ssh` to access server
+
+#### Mounting remote drives
+
+Do **not** use MacFUSE or sshfs on Mac. The Mac implementation is buggy, creates too many connection requests, and causes instability for the server.
+Any software like VSCode that list remote directory structures most likely use MacFUSE and sshfs.
+
+#### Reference
+1. https://github.com/osxfuse/osxfuse/issues/45
+2. https://github.com/osxfuse/osxfuse/issues/801
+
+Due to the lack of suitable MacFUSE/sshfs alternatives on MacOS, if you want to mount
+a remote drive from the Linux server, you should 
+1. Use Linux natively or within a virtual environment, or 
+2. Use `rsync` to sync specific files.
