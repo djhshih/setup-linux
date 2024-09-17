@@ -341,9 +341,21 @@ conda deactivate
 ```
 
 
+## Jupyter lab
 
+### on remote server without SSH tunnel
 
-## Jupyter lab on remote server and SSH tunnel
+If you are on the private network already, then you may access jupyter lab
+without a SSH tunnel.
+
+On the server, start jupyter lab, specifying <port> and <ip> as follows
+```
+jupyter lab --no-browser --port <port> --ip <ip>
+```
+
+Then, use the link provided in console output.
+
+### on remote server with SSH tunnel
 
 To do so, follow these steps:
 
