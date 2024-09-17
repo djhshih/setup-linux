@@ -368,8 +368,19 @@ To do so, follow these steps:
 
 For example, after start Jupyter in the server, you got a link `http://127.0.0.1:8890/?token=xxxx`. When you are building the tunnel, `<local_port>:<server_port>` need to be replace by `8888:127.0.0.1:8890`. Then paste the whole link in web browser and you will get in. Note that you should not close the terminal in your own PC. If you want to open up multiple Jupyter Lab, you need to repeat this process. 
 
-## GitHub
 
+## Rstudio server
+
+### without SSH tunnel
+
+Using your browser, access
+```
+http://<ip>:8787
+```
+where <ip> is IP address of the server that is running the RStudio server.
+
+
+## GitHub
 
 ### Invite coworker as your collaborator:
 
