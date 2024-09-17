@@ -193,8 +193,9 @@ A version of configuration is avaiable on github. Clone the repository and setup
 
 ```bash
 git clone git@github.com:djhshih/dot.git
-sh dot/install.sh
-echo ". ~/.my.bashrc" >> ~/.bashrc && source ~/.bashrc
+bash dot/install.sh
+echo ". ~/.my.bashrc" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 You will find that the appearance of your shell will be changed. Customized configurations for shell are stored in '$HOME/.my.bashrc'. Other configurations are stored in the home directory. Note that you should **not** delete the 'dot' folder. 
