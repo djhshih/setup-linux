@@ -1,5 +1,11 @@
 # How to setup a newly created Linux account
 
+## Setting up MobaXterm
+
+MobaXterm is a Windows-based remote desktop terminal offering remote networking tools such as SSH, X11 and also Unix commands.
+When you first launch MobaXterm, go to Settings -> Configuration -> General and change your Persistent home directory. It is highly recommended to change your home directory to C:\Users\<<Username>>.
+Once set, restart MobaXterm to apply this change.
+
 ## Virtual machine
 
 Here are the steps of setting up Fedora on VirtualBox:
