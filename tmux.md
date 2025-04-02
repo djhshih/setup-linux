@@ -1,12 +1,12 @@
 # Terminal Multiplexer (TMUX)?
 
 ## Why do we need tmux?
-1. Persisten Sessions
+1. Persisten Sessions:  
    When network connection drops or disconnected from remote server, the processes running inside a tmux
    session (e.g, bioinformatic pipelines, installations, R sessions etc.) will continue running.
-2. Multitasking and Organization
+2. Multitasking and Organization:  
    Tmux allows to run multiple panes...
-3. Lightweight Alternative to GUI Tools
+3. Lightweight Alternative to GUI Tools:  
    Don't need to use Rstudio server anymore (cannot change conda/mamba environment easily without `sudo`
    root permission). Tmux consumes fewer resources compared to GUI-based IDEs.
 
