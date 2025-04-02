@@ -445,17 +445,36 @@ fac install cromwell
 For more detailed instructions, please refer to [here](https://github.com/djhshih/setup-linux/blob/main/patefiant.md)
 
 
-## Working with others
+## Setting permissions with 'chmod'
 
-Depending on our the administrators set up the Linux server, read access may be disabled by default for all other users.
+Depending on how the administrators set up the Linux server, read access may be disabled by default for all other users.
 
 Read/write/execute access is controlled for 3 groups: owner, users belonging to the owner's group, and all other users.
 
-To ensure read access and directory access for all users, do the following:
+To ensure read access and directory access for all users in your group, do the following:
 ```
-chmod -R go+rX $HOME
+chmod -R g+rX $HOME
+```
+In the above command, the `-R` flag represents recursive and thus applies the change of permissions to all files in the directory and subdirectories.
+The `g` on the left hand side of the operator `+` represents `group`, specifying that permissions to be changed are for your group members only.
+The operator `+` or `-` specifies whether you are adding permissions or removing permissions from the group specified on the left. In this case, we are adding permissions to our group members to access our files.
+The `r` and `X` to the right of the operator represents `read` and `special execute` access. This means read and special execute access are being given to group members.
+Lastly, we specify the directory (and subdirectories) in which we want to change permissions, in this case it would be our home directory.
+
+IMPORTANT: After running this command, revert permissions of your SSH private key (e.g. in `$HOME/.ssh/id_ed25519`) back so that only you have read access.
+Run the following command to remove read and execute permissions on your private key from your group:
+```
+chmod go-rX ~/.ssh/id_ed25519
 ```
 
+You can also set default permissions for all groups by putting the following line of code into your ~/.bashrc:
+```
+umask 027
+```
+The first digit sets permissions for the owner, second digit for the group and third digit for others.
+`0` gives all access (rw- for files and rwx for directories) to the owner.
+`2` gives read access (r-- for files and r-x for directories) to the group.
+`7` does not give any access (--- for both files and directories) to others.
 
 ## MacOS
 
