@@ -2,13 +2,12 @@
 
 ## Why do we need tmux?
 1. Persisten Sessions:  
-   When network connection drops or disconnected from remote server, the processes running inside a tmux
-   session (e.g, bioinformatic pipelines, installations, R sessions etc.) will continue running.
+   * When network connection drops or disconnected from remote server, the processes running inside a tmux session (e.g, bioinformatic pipelines, installations, R sessions etc.) will continue running.
 2. Multitasking and Organization:  
-   Tmux allows to run multiple panes...
+   * Tmux allows to run multiple panes...
 3. Lightweight Alternative to GUI Tools:  
-   Don't need to use Rstudio server anymore (cannot change conda/mamba environment easily without `sudo`
-   root permission). Tmux consumes fewer resources compared to GUI-based IDEs.
+   * Don't need to use Rstudio server anymore (cannot change conda/mamba environment easily without `sudo`
+   root permission). * Tmux consumes fewer resources compared to GUI-based IDEs.
 
 ## How to setup tmux?
 1. Assume tmux is already [installed](https://github.com/tmux/tmux/wiki/Installing) on your device.
@@ -27,6 +26,11 @@
 4. `prefix + %`: open a new pane vertically
 5. `prefix + "`: open a new pane horizontally
 6. `prefix + arrowkeys`: navigate amoung panes on screen
+7. `prefix + x`: kill pane
+8. `prefix + d`: detach session (still alive)
+9. `prefix + q`: check pane numbers
+10. `prefix + [`: enter copy mode, can scrow up for previous results
+11. `prefix + ]`: paste the copied contents
 
 ## Important Notes
 1. Different tmux sessions or panes are independent. For example,
