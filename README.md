@@ -166,6 +166,13 @@ Here are some basic guides for you:
   git add README.md
   ```
 
+- `git config`: configure git the first time with user name and email
+
+   ```
+   git config --global user.email "you@example.com"
+   git config --global user.name "Your Name"
+   ```
+
 - `git commit`: stage the file you modified after using `git add` into repository. Remind of adding specific comment that will help us remember what you have done. If you just write `git commit` without `-m`,it will launch an editor and you can write a longer comment
   
   ```
