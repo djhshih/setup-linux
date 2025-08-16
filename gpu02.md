@@ -61,7 +61,7 @@ This GPU server is not intended for file storage. Files on the GPU server are *n
 Large files should be moved onto and off the server as needed.
 Users should use the storage servers for data storage. 
 
-Users with disk usage > 100G use will be asked to reduce use within 1 week.
+Users with disk usage 50G+ use will be asked to reduce use within 1 week.
 Files may be deleted if disk usage is not controlled.
 
 
