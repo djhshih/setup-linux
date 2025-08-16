@@ -38,6 +38,13 @@ As you can see from the output above, this server has 8x NVIDIA RTX 3090 GPU car
 You should try to select GPU cards that are unused. Refer to the documentation of `pytorch` or `tensorflow` on how
 to select GPU cards.
 
+Storage servers are accessible at the following mountpoints:
+```
+/storage
+/storage2
+/storage5
+```
+
 ## Rules
 
 This GPU server is intended for interactive use, so please avoid batch processing with 2+ cards.
@@ -49,6 +56,13 @@ are *not* using all CPU threads! (See **CPU limit** below.)
 
 Users who contribute significantly to GPU server crashes will be banned from server use for a period of 2 days 
 following the first offense. Each offense thereafter doubles the ban period.
+
+This GPU server is not intended for file storage. Files on the GPU server are *not* backed up.
+Large files should be moved onto and off the server as needed.
+Users should use the storage servers for data storage. 
+
+Users with disk usage > 100G use will be asked to reduce use within 1 week.
+Files may be deleted if disk usage is not controlled.
 
 
 ## Techniques
