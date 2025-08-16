@@ -41,7 +41,7 @@ to select GPU cards.
 ## Rules
 
 This GPU server is intended for interactive use, so please avoid batch processing with 2+ cards.
-[HKU HPC][https://hpc.hku.hk/] has GPU servers for batch processing.
+[HKU HPC](https://hpc.hku.hk/) has GPU servers for batch processing.
 
 This server is shared resource among multiple users. Please be considerate to other users.
 Some software tools use *all* CPU threads by default. Be sure to configure these tools properly so that you
