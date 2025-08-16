@@ -62,7 +62,7 @@ following the first offense. Each offense thereafter doubles the ban period.
 
 You should understand the behaviour and resource usage of code that you are running and configure
 the multithread usage properly. If your code uses all threads and you cannot figure it how to configure
-thread usage, you can use `taskset` to limit CPU usage of your `python` process.
+thread usage, you can use `taskset` to limit CPU usage of your process.
 
 CPU usage can be limited for a `python` process to threads 0 to 3 using `taskset` by
 ```
