@@ -11,7 +11,7 @@ A central conda is installed at `/home/conda`.
 
 Initialize your shell environment by
 ```
-$ . /home/conda/etc/profile.d/conda.sh
+$ . /home/conda/bin/activate
 ```
 
 Environments providing `pytorch` and `tensorflow` are available
