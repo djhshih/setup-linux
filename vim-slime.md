@@ -17,6 +17,26 @@ call plug#end()
 
 NOTE: vim-slime may not work with older versions of vim (e.g. version 7.4). 
 
+## Keyboard shorts
+
+To set up keyboard shortcuts, insert the following block into `~/.vimrc`.
+
+```
+noremap <space> <nop>
+let mapleader = " "
+
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": ":.1"}
+let g:slime_dont_ask_default = 1
+let g:slime_cell_delimiter = "---"
+let g:slime_python_ipython = 1
+vmap <leader>d <plug>SlimeRegionSend '> <down>
+nmap <leader>d <plug>SlimeLineSend <down>
+nmap <leader>b  <plug>SlimeParagraphSend )
+nmap <leader>v  <plug>SlimeConfig
+nmap <leader>c  <plug>SlimeSendCell
+```
+
 ## Plugin useage:
 
 This plugin can be used in a similar way as `tmux` (i.e. `vim-slime-leader + command key`). Default vim-slime-leader is 'whitespace' defined in the `~/.vimrc`. 
